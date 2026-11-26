@@ -3,12 +3,11 @@
 Official code and data repository for the study investigating the relationship between practice-level Digital Exclusion Risk Assessment (DERA) scores, digital primary care consultation activity, and patient-reported care experiences across English GP practices (2025).
 
 **DOI:** 
-
 ---
 
 ## Overview
 
-This repository contains the practice-level dataset construction script, statistical modelling scripts, and practice-level analytical dataset (`gp_level.csv`) used to reproduce the analyses in *"Practice-Level Digital Exclusion Risk (DERA) and Digital Primary Care Delivery in England"*.
+This repository contains the practice-level dataset construction script, statistical modelling scripts, and the derived practice-level analytical dataset (`gp_level.csv`) used to reproduce the analyses in *"Practice-Level Digital Exclusion Risk (DERA) and Digital Primary Care Delivery in England"*.
 
 Specifically, the codebase covers:
 1. **Practice-level data construction (`Make GP dataset.R`):** Unifying and preparing publicly available source datasets into the practice-level analytical file (`gp_level.csv`).
@@ -18,14 +17,19 @@ Specifically, the codebase covers:
 
 ---
 
-## Repository Contents
+## Data & Repository Contents
 
-* **`gp_level.csv`**: Practice-level dataset used for modelling across English GP practices.
-* **`Make GP dataset.R`**: Data preparation and linkage script showing how source datasets were unified into `gp_level.csv`.
+Two datasets underpin the analyses:
+* **`gp_level.csv` (included in repository):** Practice-level dataset constructed from publicly available data sources via `Make GP dataset.R`.
+* **GP Patient Survey (GPPS) data (not re-uploaded):** Sourced directly from the GP Patient Survey rather than redistributed in this repository. Researchers wishing to run `GPPS analyses.R` should obtain the GPPS dataset directly from its official source and place/reference it locally according to the path or object expected in `GPPS analyses.R`.
+
+### Files in This Repository
+* **`gp_level.csv`**: Practice-level dataset derived from publicly available sources for modelling across English GP practices.
+* **`Make GP dataset.R`**: Data preparation and linkage script showing how public source datasets were unified into `gp_level.csv`.
 * **`Remote appt models.R`**: Primary binomial mixed-effects models for synchronous virtual consultation proportions.
 * **`Sensitivity - remote appt models.R`**: Sensitivity analyses for the synchronous virtual consultation models.
 * **`OC rate models.R`**: Negative binomial mixed-effects models (`nbinom2`) for asynchronous online consultation rates with a practice list size offset.
-* **`GPPS analyses.R`**: Response-weighted beta mixed-effects models (`beta_family`) across the 18 GPPS items.
+* **`GPPS analyses.R`**: Response-weighted beta mixed-effects models (`beta_family`) across the 18 GPPS items (requires local GPPS data obtained directly from the GPPS source).
 
 ---
 
